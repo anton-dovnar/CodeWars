@@ -60,6 +60,6 @@ class Calculator(object):
                 except ValueError:
                     print("Not a number")
 
-            calculated = reduce(lambda a, b: action(a, b), numbers)
+            calculated = reduce(action, numbers)
             string = string[:start] + str(float(calculated)) + string[end:]
         return string
