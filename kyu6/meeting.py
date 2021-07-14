@@ -8,4 +8,5 @@ def meeting(s):
     for i in range(0, len(names) - 1, 2):
         name_groups.append([names[i+1].upper() ,names[i].upper()])
 
-    return ''.join([f'({last_name}, {first_name})' for last_name, first_name in sorted(name_groups, key=itemgetter(0))])
+    name_groups.sort(key=lambda x: (itemgetter(0)(x), itemgetter(1)(x)))
+    return ''.join([f'({last_name}, {first_name})' for last_name, first_name in name_groups])
