@@ -29,9 +29,10 @@ def solve_runes(runes):
         if str(digit) in runes:
             continue
         
-        left = left_operand.replace("?", str(digit))
-        right = right_operand.replace("?", str(digit))
-        answ = answer.replace("?", str(digit))
+        left, right, answ = [
+            operand.replace("?", str(digit))
+            for operand in [left_operand, right_operand, answer]
+        ]
         
         if digit == 0 and has_leading_zero([left, right, answ]):
             continue
