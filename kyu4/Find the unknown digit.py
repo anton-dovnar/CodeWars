@@ -24,7 +24,6 @@ def solve_runes(runes):
 
     parts = re.split(r"(?<!^)([*/+-])", expression, maxsplit=1)
     left_operand, sign, right_operand = parts
-    print(left_operand, sign, right_operand)
     
     for digit in range(10):
         if str(digit) in runes:
