@@ -13,10 +13,10 @@ def evaluate_expression(left, sign, right):
 
 
 def has_leading_zero(parts):
-    return any([
+    return any(
         (lambda x: x.startswith("0") and len(x) > 1)(part.strip("-"))
         for part in parts
-    ])
+    )
 
 
 def solve_runes(runes):
